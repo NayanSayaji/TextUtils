@@ -18,7 +18,9 @@ export default function TextForm(props) {
         let newText = text.toLowerCase();
         setText(newText);
     }
-
+    const handleClearText = ()=>{
+        setText("");    
+    }
     const handleOnChange = (event)=>{
         // console.log("On change");
         setText(event.target.value);
@@ -37,8 +39,9 @@ export default function TextForm(props) {
                 {/* as here I am using "text" a state variable so the value of that state area is equal to the value of variable "text" so for showing the typed characters on the textarea I need to add the onchange event handeler which will update the value of input characters */}
                 <textarea className="form-control"  value={text} onChange={handleOnChange} id="myBox" rows="8" placeholder='Enter text here'></textarea>
             </div>
-            <button className="btn btn-primary m-2" onClick={handleUpClick}>Convert to Uppercase</button>
-            <button className="btn btn-primary m-2" onClick={handleLowClick}>Convert to Lowercase</button>
+            <button className="btn btn-info m-2" onClick={handleUpClick}>Convert to Uppercase</button>
+            <button className="btn btn-info m-2" onClick={handleLowClick}>Convert to Lowercase</button>
+            <button className="btn btn-info m-2" onClick={handleClearText}>Clear TextBox</button>
         </div>
         <div className="container my-3">
             <h3>Summary About the above given Text</h3>
