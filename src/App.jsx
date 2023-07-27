@@ -7,22 +7,26 @@ import TextForm from './components/TextForm';
 
 
 function App() {
-  const [mode, setMode] = useState('dark');
+  const [mode, setMode] = useState('light');
 
   const toggleMode = ()=>{
     if (mode==='light') {
-      setMode('dark')
+      setMode('dark');
+      document.body.style.backgroundColor ="#212530f1";
+      // document.body.style.color ="white";
     }else{
-      setMode('light')
+      setMode('light');
+      document.body.style.backgroundColor ="white";
+      // document.body.style.color ="black";
     }
   }
   return (
     <>
       {/* this title ="TextUtils" is a props. props -> property  */}
-      <Navbar title="TextUtils2" aboutText="ABOUT" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="TextUtils" aboutText="ABOUT" mode={mode} toggleMode={toggleMode}/>
 
       <div className="container my-3">
-        <TextForm heading="Enter the text to analyze below." />
+        <TextForm heading="Enter the text to analyze below." mode={mode}/>
         {/* <About/> */}
       </div>
 
