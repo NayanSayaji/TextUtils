@@ -3,7 +3,7 @@ A simple react app which can manipulate your input text for certain use cases.
 
 ### Deployment Link - `https://nayansayaji.github.io/TextUtils/`
 
-
+![Alt text](image.png)
 
 ## Available Scripts
 
