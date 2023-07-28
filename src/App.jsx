@@ -1,17 +1,17 @@
 
 import { useState } from 'react';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -59,21 +59,21 @@ function App() {
   return (
     <>
 
-      {/* <Router> */}
+      <Router>
         {/* this title ="TextUtils" is a props. props -> property  */}
         <Navbar title="TextUtils" aboutText="ABOUT" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          {/* <Switch>
+          <Switch>
             <Route exact path="/about">
-              <About />
+              <About mode={mode} />
             </Route>
-            <Route exact path="/"> */}
-              <TextForm showAlert={showAlert} heading="Enter the text to analyze below." mode={mode} />
-            {/* </Route>
-          </Switch> */}
+            <Route exact path="/">
+              <TextForm showAlert={showAlert} heading="Try TextUtils for - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} />
+            </Route>
+          </Switch>
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
